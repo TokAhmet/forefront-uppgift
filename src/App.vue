@@ -1,26 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<div>
+		<Header></Header>
+		<!-- Insert your own api-key here -->
+		<GetMovies api_key="839ca25ec9551d4955ca89fcdaa33161"></GetMovies>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from '@/components/Header.vue';
+import GetMovies from '@/components/GetMovies.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	name: 'App',
+	components: {
+		Header,
+		GetMovies,
+	},
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
