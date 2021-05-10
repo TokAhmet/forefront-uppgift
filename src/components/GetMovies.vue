@@ -15,7 +15,7 @@
 	<main class="container" v-else>
 		<select name="Movies" class="form-select max-w-3xl m-auto mt-10 block w-full border p-3 rounded pr-3" :class="[showButton ? 'hidden' : 'block']">
 			<option value="0">Show top 100 most popular movies</option>
-			<option :value="item.id" v-for="(item, index) in title" :key="item.id">{{ index + 1 }}. {{ item }}</option>
+			<option :value="item.id" v-for="(item, index) in title" :key="item.id">{{ index + 1 }}. {{ item.original_title }}</option>
 		</select>
 	</main>
 </template>
@@ -77,7 +77,7 @@ export default {
 			const data = await this.fetchMovieData();
 			data.forEach((item) => {
 				item.results.map((val) => {
-					this.title.push(val.title);
+					this.title.push(val);
 				});
 			});
 		},
